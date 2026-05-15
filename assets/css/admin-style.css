@@ -1,0 +1,332 @@
+/* ============================================
+   ADMIN DASHBOARD - BLUE SIDEBAR + WHITE CONTENT
+   Fonts: Outfit (sidebar) + Inter (content)
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1e293b;
+    overflow-x: hidden;
+}
+
+/* Admin wrapper (flex row) */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ========== SIDEBAR (BLUE THEME) ========== */
+.admin-sidebar {
+    width: 280px;
+    background: #1e40af;  /* Deep blue */
+    font-family: 'Outfit', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+}
+
+/* Sidebar header */
+.sidebar-header {
+    padding: 2rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+/* Navigation menu - larger font, white text & icons */
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0 1rem 1rem;
+}
+
+.admin-nav a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+}
+
+.admin-nav a i {
+    width: 1.6rem;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.admin-nav a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.admin-nav a.active {
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ========== MAIN CONTENT (WHITE BACKGROUND) ========== */
+.admin-main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 2rem;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Typography - Inter, larger sizes */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1.25rem;
+}
+
+/* Stats Cards (white cards on white bg) - subtle border */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);
+}
+
+.stat-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #475569;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card .number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e40af;
+}
+
+/* Buttons (modern, rounded) */
+.btn, button[type="submit"], a.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8fafc;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    padding: 0.7rem 1.3rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.btn:hover, button[type="submit"]:hover {
+    background: #f1f5f9;
+    border-color: #94a3b8;
+}
+
+.btn-primary {
+    background: #1e40af;
+    border-color: #1e40af;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30,64,175,0.3);
+}
+
+.btn-danger {
+    background: #dc2626;
+    border-color: #dc2626;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+/* Tables (white, clean) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 1rem 0;
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+tr:hover td {
+    background: #fafcff;
+}
+
+/* Forms */
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    color: #1e293b;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.75rem;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #1e40af;
+    box-shadow: 0 0 0 3px rgba(30,64,175,0.2);
+}
+
+/* Mobile Responsive */
+.menu-toggle-btn {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+    background: #1e40af;
+    border: none;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle-btn {
+        display: block;
+    }
+    .admin-sidebar {
+        transform: translateX(-100%);
+        width: 260px;
+    }
+    .admin-sidebar.open {
+        transform: translateX(0);
+    }
+    .admin-main {
+        margin-left: 0;
+        padding: 1rem;
+        padding-top: 4rem;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th {
+        display: none;
+    }
+    tr {
+        margin-bottom: 1rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        padding: 0.5rem;
+        background: white;
+    }
+    td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        width: 40%;
+        color: #1e40af;
+    }
+}

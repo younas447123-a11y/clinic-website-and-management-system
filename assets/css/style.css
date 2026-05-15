@@ -1,0 +1,340 @@
+/* ============================================
+   FRONTEND STYLES - CLINIC MANAGEMENT SYSTEM
+   Modern, clean, responsive
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* ========== HEADER & NAVIGATION ========== */
+.site-header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 0 0 2rem 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #475569;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.search-bar {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* ========== GRID LAYOUTS ========== */
+.doctors-grid,
+.services-grid,
+.clinics-list,
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Cards */
+.doctor-card,
+.service-card,
+.clinic-card,
+.case-study-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e2e8f0;
+}
+
+.doctor-card:hover,
+.service-card:hover,
+.clinic-card:hover,
+.case-study-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
+}
+
+.doctor-card img,
+.service-card img,
+.clinic-card img,
+.case-study-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.doctor-card h3,
+.service-card h3,
+.clinic-card h2,
+.case-study-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.25rem;
+}
+
+.doctor-card p,
+.service-card p,
+.clinic-card p,
+.case-study-card p {
+    padding: 0 1rem 1rem;
+    color: #475569;
+}
+
+.doctor-card a,
+.service-card a,
+.case-study-card a {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* ========== FILTERS ========== */
+.filters {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.filters input,
+.filters select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 150px;
+}
+
+.filters button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+/* ========== DOCTOR DETAIL PAGE ========== */
+.doctor-profile {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.profile-left img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/* Modal for appointment booking */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* ========== SUPPORT FORM ========== */
+.support-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.support-form input,
+.support-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+}
+
+.support-form button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+    background: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .doctor-profile {
+        grid-template-columns: 1fr;
+    }
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .site-header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    nav {
+        justify-content: center;
+    }
+}
